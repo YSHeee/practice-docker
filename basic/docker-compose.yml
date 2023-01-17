@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  api-web:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: y_test4
+    environment:
+     - NVIDIA_VISIBLE_DEVICES=0
+     - NUM=4000
+    ports:
+      - "13583:13583"
+    runtime: nvidia
