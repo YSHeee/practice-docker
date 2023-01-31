@@ -1,4 +1,4 @@
-# 6.89GB
+# 5.24GB
 ARG CONDA_ENV=docker_p
 ARG CONDA_DIR=/opt/conda
 ARG APP_DIR=/code
@@ -43,7 +43,7 @@ RUN export BUILD_TARGET_ARCH=$(uname -m) && \
     /opt/conda/condabin/conda clean -y -av 
 
 
-FROM nvidia/cuda:11.3.0-runtime-ubuntu20.04 AS base
+FROM nvidia/cuda:11.3.0-base-ubuntu20.04 AS base
 
 ARG CONDA_ENV
 ARG CONDA_DIR
