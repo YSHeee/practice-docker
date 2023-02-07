@@ -9,7 +9,7 @@ app=FastAPI()
 def check():
     return {"Hi! It's my space!"}
 
-@app.get("/{name}")
+@app.get("/name/{name}")
 async def read_user(name):
     default = os.environ['NUM']
     return {"name":name, "message": f"Hi! {name}, {default}"}
