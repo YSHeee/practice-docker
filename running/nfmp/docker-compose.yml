@@ -26,7 +26,7 @@ services:
   app:
     build:
       context: app
-      target: builder
+      dockerfile: Dockerfile
     restart: always
     secrets:
       - db-password
@@ -42,7 +42,7 @@ services:
   proxy:
     build: 
       context: proxy
-      target: builder
+      dockerfile: Dockerfile
     restart: always
     ports:
       - 80:80
