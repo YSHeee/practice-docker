@@ -6,8 +6,6 @@ services:
      - NUM=4000
     ports:
       - "13583:13583"
-    networks:
-      - nat
     command:
       - "uvicorn"
       - "app.main:app"
@@ -20,8 +18,6 @@ services:
     image: prom/prometheus:latest
     ports:
       - "9090:9090"
-    networks:
-      - nat
 
   grafana:
     image: grafana/grafana:latest
@@ -29,8 +25,4 @@ services:
       - "3000:3000"
     depends_on:
       - prometheus
-    networks:
-      - nat
 
-networks:
-  nat:
