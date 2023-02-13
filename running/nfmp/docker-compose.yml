@@ -23,7 +23,7 @@ services:
       - 3306
       - 33060
 
-  web:
+  app:
     build:
       context: app
       target: builder
@@ -39,13 +39,15 @@ services:
       db:
         condition: service_healthy
 
-  nginx:
-    build: proxy
+  proxy:
+    build: 
+      context: proxy
+      target: builder
     restart: always
     ports:
       - 80:80
     depends_on:
-      - web
+      - app
     networks:
       - frontnet
 

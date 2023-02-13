@@ -13,6 +13,7 @@ datasources:
     # <string> url
     url: http://prometheus:9090
     # <bool> enable/disable basic auth
+    isDefault: true
     basicAuth: false
     version: 1
     editable: true
